@@ -1,0 +1,41 @@
+import flet as ft
+
+def main (page: ft.Page):
+    page.window_center()
+    page.bgcolor = '#89CFF0'
+    page.window_width = '400'
+    page.window_height = '400'
+    page.window_resizable = False
+    page.window_maximizable = False
+    
+
+    img = ft.Image(
+        src=f"avatar.png.png",
+        width=30, height=40,
+        fit=ft.ImageFit.CONTAIN,
+    )
+
+        #comando para criar botão
+    frufru = ft.FilledButton(text='Acessar')
+    frufru.bgcolor = '#87CEFA'
+    frufru.width = '500'
+
+    #botão de texto esqueci minha senha
+    es_senha = ft.TextButton(text="Esqueceu a senha?")
+    es_senha.width = '500'
+
+    #comando para entrada de dados
+    login_usuario = ft.TextField (label="Usuário")
+    login_senha = ft.TextField(label= "Senha", password= True, can_reveal_password= True)
+
+    img2 = ft.Image(
+        src=f"cadeado.png",
+        width=30, height=40,
+        fit=ft.ImageFit.CONTAIN,
+    )
+
+
+
+
+    page.add(img, login_usuario,img2, login_senha, frufru, es_senha)
+ft.app(target=main)
